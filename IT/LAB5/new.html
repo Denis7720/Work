@@ -1,0 +1,24 @@
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html"; charset="UTF8">
+<META HTTP-EQUIV="Translator" CONTENT="Promt98 Translation System">  
+<SCRIPT LANGUAGE="JavaScript">
+function compute(form) {
+   if (confirm("Вы уверены?"))
+      form.result.value = eval(form.expr.value)
+   else
+      alert("Please come back again.")
+}
+</SCRIPT>
+ </HEAD> 
+<BODY>
+ 
+<FORM>  Введите выражение: 
+<INPUT TYPE="text" NAME="expr" SIZE=15 >
+ 
+<INPUT TYPE="button" VALUE="Calculate" ONCLICK="compute(this.form)">
+ <BR>
+Результат: 
+<INPUT TYPE="text" NAME="result" SIZE=15 >
+ <BR>
+</FORM>
+</BODY>

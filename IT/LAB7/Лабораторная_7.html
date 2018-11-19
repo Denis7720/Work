@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>Лабораторная_7</title>
+	<script type="text/javascript">
+		
+		var selected;
+
+		document.onmousedown = function(e) {
+			if (e.which != 1) {
+				return;
+			}
+			selected = e.target;
+		}
+
+		document.onmousemove = function(e) {
+			if (!selected) {
+				return;
+			}
+			selected.style.left = e.pageX - 90/2 + 'px';
+			selected.style.top = e.pageY - 160/2 + 'px';
+		}
+
+		document.onmouseup = function() {
+			selected = false;
+		}
+	</script>
+</head>
+<body bgcolor="lightblue">
+	<h1 align="center">Мозаика</h1>
+	<p align="center">Перемещая картинки мышкой нужно собрать рисунок:
+	<img src="r1.gif" style="position: absolute; top: 110px; left: 10px; cursor: hand;">
+	<img src="r2.gif" style="position: absolute; top: 110px; left: 120px; cursor: hand;">
+	<img src="r3.gif" style="position: absolute; top: 280px; left: 10px; cursor: hand;">
+	<img src="r4.gif" style="position: absolute; top: 280px; left: 120px; cursor: hand;">
+	</p>
+</body>
+</html>

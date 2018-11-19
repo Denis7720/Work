@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>Лабораторная 5</title>
+	<script language="javascript" type="text/javascript">
+		function set_image(image_url1,image_url2) {
+			document.img_name1.src = image_url1;
+			document.img_name2.src = image_url2;
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<img height="600" width="600" name="img_name1" src="photo1.jpg">
+		<img height="600" width="600" name="img_name2" src="photo2.jpg">
+		<br>
+		<input type="button" name="new" value="Обменять" onclick="set_image('photo2.jpg', 'photo1.jpg')">
+	</form>
+</body>
+</html>

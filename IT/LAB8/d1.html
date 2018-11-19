@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		function someFunc(selected) {
+			var number = selected.value;
+			var result = number * number;
+			target.value= result;
+			return;
+		}
+	</script>
+</head>
+<body bgcolor="#7cfc00">
+	<form method="post">
+		<h1 align="center">
+			<b>
+				Вычисление площади
+			</b>
+		</h1>
+
+		<p>Автоматически</p>
+
+		<p>Сторона:
+		<input type="text" name="c1" value="12" onchange="someFunc(this)">
+		</p>
+		<p>Площадь:
+		<input type="text" name="c2" id="target">
+		</p>
+	</form>
+</body>
+</html>

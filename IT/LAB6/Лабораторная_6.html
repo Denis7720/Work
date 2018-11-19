@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title>Лабораторная 6</title>
+	<script type="text/javascript">
+		delay = 100;
+		gifsNum = 1;
+		timerID = null;
+		timerRunning = false;
+		thegifs = new Array();
+
+		for (i = 1; i<13; i++) {
+			thegifs[i] = new Image();
+			thegifs[i].src = "s" + i + ".gif";
+		}
+		function stop() {
+			if (timerRunning)
+				clearTimeout(timerID);
+			timerRunning = false;
+		}
+		function start() {
+			stop();
+			animate();
+		}
+		function animate() {
+			document.animation.src = thegifs[gifsNum].src;
+			gifsNum++;
+			if (gifsNum > 12) {
+				gifsNum = 1;
+			}
+			timerID = setTimeout("animate()", delay);
+			timerRunning = true;
+		}
+		function slower() {
+			delay+=10;
+			if (delay > 4000)
+				delay = 4000;
+		}
+		function faster() {
+			delay-=10;
+			if (delay < 0)
+				delay = 0;
+		}
+	</script>
+</head>
+<body>
+	<img name="animation" src="s1.gif">
+	<form>
+		<input value="Start" type="button" onclick="start()">
+		<input value="Stop" type="button" onclick="stop()">
+		<input value="Slower" type="button" onclick="slower()">
+		<input value="Faster" type="button" onclick="faster()">
+	</form>
+</body>
+</html>
